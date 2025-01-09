@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "Salesforce_NOOB",
+  "name": "Football Manager",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "61.0"
