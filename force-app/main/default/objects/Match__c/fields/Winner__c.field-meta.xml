@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Winner__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Team_1_Score__c &gt; Team_2_Score__c, Team_1__r.Name, IF(Team_1_Score__c &lt; Team_2_Score__c, Team_2__r.Name, &quot;DRAW&quot;) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Winner</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

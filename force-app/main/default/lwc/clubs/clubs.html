@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <div class="card-title">
+            <p>Clubs</p>
+        </div>
+
+        <div class="clubs-list flex">
+            <template for:each={clubs} for:item="club">
+                <li class="club flex" key={club.Id}>
+                    <button data-id={club.Id} onclick={handleClubSelect} class="club-btn flex">
+                        <img src={club.logoUrl} alt={club.Name} data-id={club.Id} />
+                    </button>
+                </li>
+            </template>
+        </div>
+
+        <c-club club-id={selectedClubId}></c-club>
+
+    </lightning-card>
+</template>

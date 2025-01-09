@@ -1,0 +1,134 @@
+<template>
+    <lightning-card>
+        <template if:true={hasClubData}>
+            <main class="main-card">
+                <div class="club-header-card">
+                    <button class="close-club" onclick={resetFields}>X</button>
+                    <div class="club-header flex">
+                        <img class="club-image" src={clubLogo} alt={clubName} />
+                        <div class="club-details flex">
+                            <div class="club-name">{clubName}</div>
+                            <div class="club-manager flex">
+                                <img class="club-details-logo" src={managerLogoUrl} alt="Manager: ">
+                                <div>{clubManager}</div>
+                            </div>
+                            <div class="club-stadium flex">
+                                <img class="club-details-logo" src={stadiumLogoUrl} alt="Stadium: ">
+                                <div>{clubStadium}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <lightning-tabset>
+
+                    <lightning-tab label="Players" value="players">
+                        <div class="players-section">
+                            <template if:true={goalkeepers.length}>
+                                <h3 class="player-position">Goalkeepers</h3>
+                                <div class="players-list flex">
+                                    <template for:each={goalkeepers} for:item="player">
+                                        <div key={player.Id} class="player-item flex">
+                                            <img src={player.photoUrl} alt="Image Unavailable" class="player-photo" />
+                                            <p class="player-name">{player.Name}</p>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+                            <template if:true={defenders.length}>
+                                <h3 class="player-position">Defenders</h3>
+                                <div class="players-list flex">
+                                    <template for:each={defenders} for:item="player">
+                                        <div key={player.Id} class="player-item  flex">
+                                            <img src={player.photoUrl} alt="Image Unavailable" class="player-photo" />
+                                            <p class="player-name">{player.Name}</p>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+                            <template if:true={midfielders.length}>
+                                <h3 class="player-position">Midfielders</h3>
+                                <div class="players-list flex">
+                                    <template for:each={midfielders} for:item="player">
+                                        <div key={player.Id} class="player-item flex">
+                                            <img src={player.photoUrl} alt="Image Unavailable" class="player-photo" />
+                                            <p class="player-name">{player.Name}</p>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+                            <template if:true={forwards.length}>
+                                <h3 class="player-position">Forwards</h3>
+                                <div class="players-list flex">
+                                    <template for:each={forwards} for:item="player">
+                                        <div key={player.Id} class="player-item flex">
+                                            <img src={player.photoUrl} alt="Image Unavailable" class="player-photo" />
+                                            <p class="player-name">{player.Name}</p>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+                        </div>
+                    </lightning-tab>
+
+
+                    <lightning-tab label="News" value="news">
+                        <div class="news-section">
+
+                            <template if:true={isLoading}>
+                                <div class="spinner-container">
+                                    <lightning-spinner alternative-text="Loading news"
+                                        size="medium"></lightning-spinner>
+                                </div>
+                            </template>
+
+                            <template if:true={hasNews}>
+                                <ul class="news-list flex">
+                                    <template for:each={clubNews} for:item="news">
+                                        <li key={news.url} class="news-item">
+                                            
+                                            <a href={news.url} target="_blank" class="">
+                                            <article class="news-article">
+                                                <img class="news-image" src={news.urlToImage} alt="images">
+
+                                                <div class="news-main">
+                                                    <div class="news-published flex">
+                                                        <p class="">{news.source}</p>
+                                                        <p class="">
+                                                            <lightning-formatted-date-time value={news.publishedAt}
+                                                                month="long" day="numeric">
+                                                            </lightning-formatted-date-time>
+                                                        </p>
+                                                    </div>
+
+                                                    <h2 class="news-title"> {news.title}</h2>
+
+                                                    <p class="news-description">{news.description}</p>
+                                                </div>
+                                            </article>
+                                            </a>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </template>
+
+                            <template if:true={newsError}>
+                                <div class="error-container slds-text-color_error slds-p-around_medium">
+                                    {newsError}
+                                </div>
+                            </template>
+
+                            <template if:false={hasNews}>
+                                <div class="no-news slds-p-around_medium slds-text-align_center">
+                                    No recent news found for {clubName}.
+                                </div>
+                            </template>
+                        </div>
+                    </lightning-tab>
+
+
+                </lightning-tabset>
+            </main>
+        </template>
+    </lightning-card>
+</template>

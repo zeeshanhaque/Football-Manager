@@ -1,0 +1,36 @@
+.filter-options {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-block: 4px;
+    margin-inline: 10px;
+    padding-block: 8px;
+    padding-inline: 10px;
+}
+
+.filter-title {
+    font-size: 1rem;
+}
+
+lightning-combobox {
+    width: 10rem;
+}
+
+.clear-filters {
+    background-color: white;
+    color: tomato;
+    border: 2px solid red;
+    border-radius: 4px;
+    margin-left: auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.clear-filters:hover {
+    background-color: tomato;
+    color: white;
+}

@@ -1,0 +1,55 @@
+:host {
+    --primary-color: #5901c4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+}
+
+.card-title {
+    background-color: #eee5f9;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.card-title p {
+    font-size: 1.25rem;
+    margin-left: 2rem;
+    font-weight: bold;
+}
+
+.player-list {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+button {
+    background-color: unset;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    width: 11rem;
+    height: 2rem;
+    font-size: 0.96rem;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}

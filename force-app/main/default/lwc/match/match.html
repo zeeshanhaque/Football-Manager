@@ -1,0 +1,71 @@
+<template>
+    <lightning-card>
+        <template if:true={hasMatchData}>
+            <div class="match-card flex">
+                <div class="match-header flex">
+                    <p class="date">{matchDate}</p>
+                    <p class="time">FT</p>
+                </div>
+
+                <div class="score-card flex">
+                    <div class="team-card flex">
+                        <div class="team flex">
+                            <div class="team-logo"><img src={team1Logo} alt="Club Logo"/></div>
+                            <div class="team-name">{team1Name}</div>
+                        </div>
+                        <div class="team-score">{team1Score}</div>
+                    </div>
+
+                    <div class="score-divider">-</div>
+
+                    <div class="team-card flex">
+                        <div class="team-score">{team2Score}</div>
+                        <div class="team flex">
+                            <div class="team-logo"><img src={team2Logo} alt="Club Logo"/></div>
+                            <div class="team-name">{team2Name}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events flex">
+                    <!-- Team 1 Goals -->
+                    <div class="team-scorers flex">
+                        <template for:each={team1Goals} for:item="goal">
+                            <div key={goal.Id} class="goal">
+                                <div class="player">
+                                    {goal.Player__r.Name} 
+                                    <span class="time"> {goal.Minute__c}'</span>
+                                    <template if:true={goal.isOwnGoal}>
+                                        <span class="og-label"> (OG)</span>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+               
+                    <div class="goal-divider"><img src="https://cdn-icons-png.flaticon.com/512/77/77305.png" alt="⚽"></div>
+               
+                    <!-- Team 2 Goals -->
+                    <div class="team-scorers team-scorers-left flex">
+                        <template for:each={team2Goals} for:item="goal">
+                            <div key={goal.Id} class="goal">
+                                <div class="player">
+                                    {goal.Player__r.Name} 
+                                    <span class="time"> {goal.Minute__c}'</span>
+                                    <template if:true={goal.isOwnGoal}>
+                                        <span class="og-label"> (OG)</span>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                
+            </div>
+        </template>
+
+        <template if:false={hasMatchData}>
+            <div class="slds-text-color_error">--Error Displaying Match--</div>
+        </template>
+    </lightning-card>
+</template>

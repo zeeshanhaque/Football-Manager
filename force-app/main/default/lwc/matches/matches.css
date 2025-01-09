@@ -1,0 +1,92 @@
+:host {
+    --primary-color: #5901c4;
+    --secondary-color: #eee5f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.card-title {
+    background-color: var(--secondary-color);
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.card-title p {
+    font-size: 1.25rem;
+    margin-left: 2rem;
+    font-weight: bold;
+}
+
+.match-button {
+    background: none;
+    border: none;
+    width: 90%;
+    font-size: 1rem;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    padding-block: 6px;
+    margin-inline: auto;
+}
+
+.match-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.match-button:hover > .score-card {
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+
+.match-group {
+    margin-bottom: 1.25rem;
+}
+
+.fixture-date {
+    margin-left: 2rem;
+}
+
+.score-card {
+    flex: 0 0 50px;
+    margin-inline: 1rem;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.matches-list {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 26rem;
+    margin-top: 1rem;
+}
+
+.team {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.team1 {
+    text-align: right;
+}
+.team2 {
+    text-align: left;
+}
+
+.match-record-end {
+    width: 90%;
+    margin: 4px auto;
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Same_Team</fullName>
+    <active>true</active>
+    <errorConditionFormula>Team_1__c ==  Team_2__c</errorConditionFormula>
+    <errorMessage>Enter Different Teams for the Match</errorMessage>
+</ValidationRule>

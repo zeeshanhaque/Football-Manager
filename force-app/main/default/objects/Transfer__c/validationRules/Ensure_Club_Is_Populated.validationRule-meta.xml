@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_Club_Is_Populated</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  OR(
+    ISPICKVAL(Transfer_Type__c, &apos;Club Transfer&apos;),
+    ISPICKVAL(Transfer_Type__c, &apos;Free Agent Signing&apos;)
+  ),
+  ISBLANK(New_Club__c)
+)</errorConditionFormula>
+    <errorDisplayField>New_Club__c</errorDisplayField>
+    <errorMessage>Club Field cannot be Blank for Player Signing</errorMessage>
+</ValidationRule>

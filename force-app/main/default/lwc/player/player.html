@@ -1,0 +1,28 @@
+<template>
+    <lightning-card>
+        <template if:true={playerId}>
+            <div class="player-info">
+                <div class="player-header">
+                    <p class="position">{playerPosition}</p>
+                    <div class="nationality-container">
+                        <img src={flagUrl} class="flag" />
+                    </div>
+                </div>
+                <div class="player-photo">
+                    <template if:true={playerPhoto}>
+                        <img src={playerPhoto} alt="Player Photo" class="photo" />
+                    </template>
+                    <template if:false={playerPhoto}>
+                        <p>No photo available</p>
+                    </template>
+                </div>
+                <div class="player-footer">
+                    <p class="club">{playerClub}</p>
+                    <div class="goals">
+                        <p>{playerGoals}</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

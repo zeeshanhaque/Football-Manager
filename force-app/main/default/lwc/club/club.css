@@ -1,0 +1,182 @@
+:host {
+    --primary-color: #5901c4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.main-card {
+    border: 2px solid var(--primary-color);
+    border-radius: 18px;
+    background-color: #91ce8b;
+    width: 92%;
+    margin: 0 auto;
+}
+
+.club-header-card {
+    background-color: var(--primary-color);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.close-club {
+    float: right;
+    margin: 6px;
+    background-color: white;
+    color: tomato;
+    border: 1px solid red;
+    border-radius: 50%;
+    margin-left: auto;
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.close-club:hover {
+    background-color: tomato;
+    color: white;
+}
+
+
+.club-header {
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 0.75rem;
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.club-image {
+    width: 6rem;
+}
+
+.club-details {
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.club-details-logo {
+    width: 2rem;
+}
+
+.club-name {
+    font-size: 180%;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.club-stadium,
+.club-manager {
+    gap: 1rem;
+    font-size: 1rem;
+}
+
+.club-manager {
+    margin-bottom: 0.5rem;
+}
+
+.players-section {
+    padding-bottom: 2rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.player-position {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-block: 2rem 0.25rem;
+}
+
+.player-item {
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.player-item:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.players-list {
+    gap: 2rem;
+    overflow: scroll;
+}
+
+.player-photo {
+    object-fit: cover;
+    width: 16rem;
+    min-width: 14rem;
+    height: 12rem;
+}
+
+.player-name {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-block: 4px;
+}
+
+
+/* NEWS */
+.news-list {
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-block: 1rem;
+}
+
+.news-item {
+    background-color: white;
+    border-radius: 6px;
+    width: 30%;
+}
+
+.news-article {
+
+}
+
+.news-main {
+    padding: 0.75rem;
+}
+
+.news-image {
+    border-radius: 6px 6px 0px 0px;
+}
+
+.news-published {
+    justify-content: space-between;
+    font-weight: bold;
+    padding-inline: 1.75rem;
+}
+
+.news-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.news-description {
+    font-size: 1rem;
+}

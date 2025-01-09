@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Player_Without_Club</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISNEW(),
+  AND(
+    OR(
+      ISPICKVAL(Transfer_Type__c, &apos;Club Transfer&apos;),
+      ISPICKVAL(Transfer_Type__c, &apos;Player Release&apos;)
+    ),
+    ISBLANK(Player__r.Club__c)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Transfer_Type__c</errorDisplayField>
+    <errorMessage>Player is a Free Agent</errorMessage>
+</ValidationRule>

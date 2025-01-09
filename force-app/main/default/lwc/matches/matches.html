@@ -1,0 +1,53 @@
+<template>
+    <lightning-card>
+        <div class="card-title">
+            <p>Matches</p>
+        </div>
+
+        <template if:true={paginatedMatches}>
+            <div class="matches-list flex">
+                <template for:each={paginatedMatches} for:item="group">
+                    <div key={group.date} class="match-group">
+                        <strong class="fixture-date">{group.date}</strong>
+                        <template for:each={group.matches} for:item="match">
+                            <div key={match.Id}>
+                                <button class="match-button flex" data-id={match.Id} onclick={handleMatchSelect}>
+                                    <div class="team team1">{match.Team_1__r.Name}</div>
+                                    <div class="score-card">{match.Team_1_Score__c} - {match.Team_2_Score__c}</div>
+                                    <div class="team team2">{match.Team_2__r.Name}</div>
+
+                                </button>
+                                <hr class="match-record-end">
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+
+            <div class="slds-p-top_medium slds-text-align_center">
+                <div class="button-group">
+                    <button onclick={handlePrevious} disabled={isFirstPage}
+                        class="slds-button slds-button_neutral slds-m-right_x-small">
+                        Previous
+                    </button>
+                    <button onclick={handleNext} disabled={isLastPage}
+                        class="slds-button slds-button_neutral slds-m-left_x-small">
+                        Next
+                    </button>
+                </div>
+                <p class="slds-p-top_x-small">
+                    Page {currentPage} of {totalPages}
+                </p>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <div class="slds-text-color_error">--Error Displaying Matches--</div>
+        </template>
+
+        <template if:true={selectedMatchId}>
+            <c-match match-id={selectedMatchId}></c-match>
+        </template>
+
+    </lightning-card>
+</template>

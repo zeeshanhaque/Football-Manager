@@ -1,0 +1,23 @@
+<template>
+    <lightning-card>
+        <div class="filter-options">
+            <div>Filter Players:</div>
+
+            <lightning-combobox 
+                label="Position" 
+                value={selectedPosition} 
+                options={positionOptions} 
+                onchange={handlePositionChange}>
+            </lightning-combobox>
+
+            <lightning-combobox 
+                label="Nationality" 
+                value={selectedNationality} 
+                options={nationOptions} 
+                onchange={handleNationalityChange}>
+            </lightning-combobox>
+
+            <button class="clear-filters" onclick={handleClearAllFilters}>X</button>
+        </div>
+    </lightning-card>
+</template>

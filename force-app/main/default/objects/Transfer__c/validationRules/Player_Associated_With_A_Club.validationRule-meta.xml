@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Player_Associated_With_A_Club</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISNEW(),
+  AND(
+    ISPICKVAL(Transfer_Type__c, &apos;Free Agent Signing&apos;),
+    NOT(ISBLANK( Current_Club__c )) 
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Transfer_Type__c</errorDisplayField>
+    <errorMessage>Player is Associated With a Club</errorMessage>
+</ValidationRule>

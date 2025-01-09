@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <div class="card-title">
+            <p>Players</p>
+        </div>
+
+        <c-player-filter onfilterchange={handleFilterChange}></c-player-filter>
+        
+        <div class="player-list flex">
+            <template for:each={filteredPlayers} for:item="player">
+                <li class="player" key={player.Id}>
+                    <button data-id={player.Id} onclick={handlePlayerSelect}>{player.Name}</button>
+                </li>
+            </template>
+        </div>
+
+        <c-player player-id={selectedPlayerId}></c-player>
+
+    </lightning-card>
+</template>

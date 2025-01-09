@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Stage__c</fullName>
+    <label>Approval Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Transfer_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Awaiting Current Manager Approval</fullName>
+                <default>false</default>
+                <label>Awaiting Current Manager Approval</label>
+            </value>
+            <value>
+                <fullName>Approved by Current Manager</fullName>
+                <default>false</default>
+                <label>Approved by Current Manager</label>
+            </value>
+            <value>
+                <fullName>Awaiting New Club Manager Approval</fullName>
+                <default>false</default>
+                <label>Awaiting New Club Manager Approval</label>
+            </value>
+            <value>
+                <fullName>Approved by New Club Manager</fullName>
+                <default>false</default>
+                <label>Approved by New Club Manager</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Club Transfer</controllingFieldValue>
+            <controllingFieldValue>Player Release</controllingFieldValue>
+            <valueName>Awaiting Current Manager Approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Club Transfer</controllingFieldValue>
+            <controllingFieldValue>Player Release</controllingFieldValue>
+            <valueName>Approved by Current Manager</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Club Transfer</controllingFieldValue>
+            <controllingFieldValue>Free Agent Signing</controllingFieldValue>
+            <valueName>Awaiting New Club Manager Approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Club Transfer</controllingFieldValue>
+            <controllingFieldValue>Free Agent Signing</controllingFieldValue>
+            <valueName>Approved by New Club Manager</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

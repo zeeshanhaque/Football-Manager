@@ -1,0 +1,103 @@
+/* Input div styles */
+.input-div {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.lbl-for-btn {
+    height: 18px;
+
+}
+
+/* Custom styles for player info */
+.player-info {
+    display: flex;
+    flex-direction: column;
+    width: 34%;
+    min-width: 20rem;
+    margin: auto;
+    padding: 6px;
+    background-color: rgb(59, 59, 59);
+    color: white;
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 1.4rem;
+    margin-bottom: 6px;
+}
+
+.goalkeeper {
+    color: rgb(50, 116, 222);
+}
+
+.defender {
+    color: green;
+}
+
+.midfielder {
+    color: yellow;
+}
+
+.forward {
+    color: red;
+}
+
+.nationality-container {
+    position: relative;
+    top: 10px;
+    width: 50px;
+    right: 6px;
+}
+
+.flag {
+    margin-block: 2px;
+    border: 1px solid black;
+}
+
+.player-photo {
+    min-height: 100px;
+}
+
+.photo {
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+.player-footer {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    height: 2rem;
+    margin-top: 6px;
+}
+
+.club {
+    font-size: 16px;
+    width: 6.5rem;
+    text-transform: uppercase;
+    line-height: 15px;
+}
+
+.goals {
+    border: 3px solid red;
+    border-radius: 50%;
+    background-color: rgb(240, 220, 0);
+    color: black;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+    right: 6px;
+}
